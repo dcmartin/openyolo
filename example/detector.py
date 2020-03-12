@@ -59,7 +59,7 @@ meta = dn.load_meta(data)
 raw = dn.detect(net, meta, filename, threshold)
 
 result = {}
-result['net'] = cfg
+result['cfg'] = cfg
 result['weights'] = weights
 result['meta'] = data
 result['threshold'] = threshold

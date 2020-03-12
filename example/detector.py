@@ -61,9 +61,11 @@ raw = dn.detect(net, meta, filename, threshold)
 result = {}
 result['cfg'] = cfg
 result['weights'] = weights
-result['meta'] = data
+result['data'] = data
 result['threshold'] = threshold
-result['file'] = filename
+result['filename'] = filename
+result['count'] = len(raw)
+
 
 entities = []
 for k in range(len(raw)):

@@ -1,0 +1,30 @@
+{
+  "file":"data/giraffe",
+  "meta":"coco.data",
+  "net":"cfg/yolov3-tiny.cfg",
+  "results":[
+    {
+      "center":{
+        "x":359,
+        "y":326
+      },
+      "confidence":53.18787097930908,
+      "entity":"zebra",
+      "height":242,
+      "id":"0",
+      "width":109
+    },
+    {
+      "center":{
+        "x":296,
+        "y":210
+      },
+      "confidence":52.8597891330719,
+      "entity":"giraffe",
+      "height":504,
+      "id":"1",
+      "width":285
+    }
+  ],
+  "weights":"yolov3-tiny.weights"
+}

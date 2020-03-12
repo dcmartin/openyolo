@@ -1,0 +1,19 @@
+{
+  "file":"data/eagle",
+  "meta":"coco.data",
+  "net":"cfg/yolov3-tiny.cfg",
+  "results":[
+    {
+      "center":{
+        "x":379,
+        "y":260
+      },
+      "confidence":76.4993965625763,
+      "entity":"bird",
+      "height":322,
+      "id":"0",
+      "width":486
+    }
+  ],
+  "weights":"yolov3-tiny.weights"
+}

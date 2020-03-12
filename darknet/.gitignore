@@ -1,0 +1,4 @@
+darknet
+lib*.a
+lib*.so
+*.o

@@ -12,10 +12,6 @@ import json, codecs
 ## darknet
 import darknet as dn
 
-dn.set_gpu(0)
-net = dn.load_net("cfg/yolov3-tiny.cfg", "yolov3-tiny.weights", 0)
-meta = dn.load_meta("cfg/coco.data")
-
 ## input
 narg = len(sys.argv)
 
@@ -25,16 +21,47 @@ else:
   filename = "data/horses.jpg"
 
 if narg > 2:
-  threshold = float(sys.argv[2])
+  config = sys.argv[2]
+else:
+  config = "tiny-v2"
+
+if narg > 3:
+  threshold = float(sys.argv[3])
 else:
   threshold = 0.5
+
+if config == "tiny-v2":
+  cfg = "darknet/cfg/yolov2-tiny-voc.cfg"
+  weights = "yolov2-tiny-voc.weights"
+  data = "darknet/cfg/voc.data"
+
+if config == "tiny-v3":
+  cfg = "darknet/cfg/yolov3-tiny.cfg"
+  weights = "yolov3-tiny.weights"
+  data = "darknet/cfg/coco.data"
+
+if config == "v2":
+  cfg = "darknet/cfg/yolov2.cfg"
+  weights = "yolov2.weights"
+  data = "darknet/cfg/coco.data"
+
+if config == "v3":
+  cfg = "darknet/cfg/yolov3.cfg"
+  weights = "yolov3.weights"
+  data = "darknet/cfg/coco.data"
+
+print cfg, weights, data
+
+dn.set_gpu(0)
+net = dn.load_net(cfg, weights, 0)
+meta = dn.load_meta(data)
 
 raw = dn.detect(net, meta, filename, threshold)
 
 result = {}
-result['net'] = "cfg/yolov3-tiny.cfg"
-result['weights'] = "yolov3-tiny.weights"
-result['meta'] = "coco.data"
+result['net'] = cfg
+result['weights'] = weights
+result['meta'] = data
 result['threshold'] = threshold
 result['file'] = filename
 

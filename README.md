@@ -8,13 +8,36 @@ OpenYOLO is an open source *object detection and classification* library written
 Outside of use in building the [`yolo`](http://github.com/dcmartin/open-horizon/tree/master/yolo/README.md) _service_, run `make` in the top-level directory to build the `darknet/` directory as well as test each version (`tiny-v2`,`tiny-v3`,`v2`,`v3`); for example (_edited for length_):
 
 ```
+% git clone http://github.com/dcmartin/openyolo
+% cd openyolo
+% export DARKNET=$(pwd)/darknet
 % make
 make -C darknet
 ... lots of lines deleted ...
-export \
-	  DARKNET_WEIGHTS=/Volumes/dcmartin/GIT/openyolo/yolov2-tiny-voc.weights \
-	  DARKNET_CONFIG=/Volumes/dcmartin/GIT/openyolo/darknet/cfg/yolov2-tiny-voc.cfg \
-	  DARKNET_DATA=/Volumes/dcmartin/GIT/openyolo/darknet/cfg/voc.data \
+```
+
+## Usage
+Weights for the neural network must be downloaded and made available in the local filesystem; the weights files may be downloaded from the original source:
+
++ `tiny`, `tiny-v2` - [`http://pjreddie.com/media/files/yolov2-tiny-voc.weights`](http://pjreddie.com/media/files/yolov2-tiny-voc.weights)
++ `tiny-v3` - [`http://pjreddie.com/media/files/yolov3-tiny.weights`](http://pjreddie.com/media/files/yolov3-tiny.weights)
++ `v2` - [`https://pjreddie.com/media/files/yolov2.weights`](https://pjreddie.com/media/files/yolov2.weights)
++ `v3` - [`https://pjreddie.com/media/files/yolov3.weights`](https://pjreddie.com/media/files/yolov3.weights)
+
+The weights should be downloaded and stored in the top-level directory; for example:
+
+```
+curl -sSL -o ${DARKNET}/yolov2-tiny-voc.weights http://pjreddie.com/media/files/yolov2-tiny-voc.weights
+```
+
+## Testing
+When the `make` command completes (successfully), test the build; for example:
+
+```
+% export \
+	  DARKNET_WEIGHTS=${OPENYOLO}/yolov2-tiny-voc.weights \
+	  DARKNET_CONFIG=${DARKNET}/cfg/yolov2-tiny-voc.cfg \
+	  DARKNET_DATA=${DARKNET}/cfg/voc.data \
 	  && \
 	  ./example/test-yolo.sh
 layer     filters    size              input                output
@@ -40,11 +63,8 @@ Loading weights from /Volumes/dcmartin/GIT/openyolo/yolov2-tiny-voc.weights...Do
 cow: 75%
 ```
 
-## Usage
-OpenYOLO includes the Python script `detector.py` to run the `YOLO` algorithm on a specified image; options may be specified for a variety of needs:
-
-### `detector.py` options
-The Python script takes three arguments (n.b. two and three are optional):
+## `detector.py` script
+OpenYOLO includes the Python script [`example/detector.py`](example/detector.py) to run the `YOLO` algorithm on a specified image; options may be specified for a variety of needs.  The Python script takes three arguments (n.b. two and three are optional):
 
  + `<JPEG file>`- JPEG image file to process
  + `<config>` - may be `tiny-v2`, `tiny-v3`, `v2`, or `v3`; default: `tiny-v2` (**optional**)

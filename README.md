@@ -31,6 +31,9 @@ curl -sSL -o ${DARKNET}/yolov2-tiny-voc.weights http://pjreddie.com/media/files/
 ```
 
 ## Install CUDA
+Install nVidia CUDA drivers and libraries; the information below is for Ubuntu18.04, please refer to the [official](https://developer.nvidia.com/cuda-downloads) instructions.
+
+<a href="https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=debnetwork"><img src="docs/cuda-options.png" width="75%"></a>
 
 ```
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin

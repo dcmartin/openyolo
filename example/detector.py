@@ -32,22 +32,22 @@ else:
 
 if config == "tiny-v2":
   cfg = "darknet/cfg/yolov2-tiny-voc.cfg"
-  weights = "yolov2-tiny-voc.weights"
+  weights = "darknet/yolov2-tiny-voc.weights"
   data = "darknet/cfg/voc.data"
 
 if config == "tiny-v3":
   cfg = "darknet/cfg/yolov3-tiny.cfg"
-  weights = "yolov3-tiny.weights"
+  weights = "darknet/yolov3-tiny.weights"
   data = "darknet/cfg/coco.data"
 
 if config == "v2":
   cfg = "darknet/cfg/yolov2.cfg"
-  weights = "yolov2.weights"
+  weights = "darknet/yolov2.weights"
   data = "darknet/cfg/coco.data"
 
 if config == "v3":
   cfg = "darknet/cfg/yolov3.cfg"
-  weights = "yolov3.weights"
+  weights = "darknet/yolov3.weights"
   data = "darknet/cfg/coco.data"
 
 print cfg, weights, data

@@ -30,7 +30,7 @@ if narg > 3:
 else:
   threshold = 0.5
 
-if config == "tiny-v2":
+if config == "tiny-v2" or config == "tiny":
   cfg = "darknet/cfg/yolov2-tiny-voc.cfg"
   weights = "darknet/yolov2-tiny-voc.weights"
   data = "darknet/cfg/voc.data"

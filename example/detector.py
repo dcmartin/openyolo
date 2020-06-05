@@ -52,11 +52,7 @@ if config == "v3":
 
 print cfg, weights, data
 
-try:
-  gpu=os.environ['NVIDIA_VISIBLE_DEVICES'];
-  dn.set_gpu(1)
-except:
-  dn.set_gpu(0)
+#dn.set_gpu(0)
 
 net = dn.load_net(cfg, weights, 0)
 meta = dn.load_meta(data)

@@ -5,25 +5,25 @@
 PWD := $(shell pwd)
 DARKNET := ${PWD}/darknet
 
-DARKNET_TINYV2_WEIGHTS := ${PWD}/yolov2-tiny-voc.weights
+DARKNET_TINYV2_WEIGHTS := ${PWD}/darknet/yolov2-tiny-voc.weights
 DARKNET_TINYV2_CONFIG := ${DARKNET}/cfg/yolov2-tiny-voc.cfg
 DARKNET_TINYV2_DATA := ${DARKNET}/cfg/voc.data
 DARKNET_TINYV2_WEIGHTS_URL := http://pjreddie.com/media/files/yolov2-tiny-voc.weights
 DARKNET_TINYV2_WEIGHTS_MD5 := fca33deaff44dec1750a34df42d2807e
 
-DARKNET_TINYV3_WEIGHTS := ${PWD}/yolov3-tiny.weights
+DARKNET_TINYV3_WEIGHTS := ${PWD}/darknet/yolov3-tiny.weights
 DARKNET_TINYV3_CONFIG := ${DARKNET}/cfg/yolov3-tiny.cfg
 DARKNET_TINYV3_DATA := ${DARKNET}/cfg/coco.data
 DARKNET_TINYV3_WEIGHTS_URL := http://pjreddie.com/media/files/yolov3-tiny.weights
 DARKNET_TINYV3_WEIGHTS_MD5 := 3bcd6b390912c18924b46b26a9e7ff53
 
-DARKNET_V2_WEIGHTS := ${PWD}/yolov2.weights
+DARKNET_V2_WEIGHTS := ${PWD}/darknet/yolov2.weights
 DARKNET_V2_CONFIG := ${DARKNET}/cfg/yolov2.cfg
 DARKNET_V2_DATA := ${DARKNET}/cfg/coco.data
 DARKNET_V2_WEIGHTS_URL := https://pjreddie.com/media/files/yolov2.weights
 DARKNET_V2_WEIGHTS_MD5 := 70d89ba2e180739a1c700a9ff238e354
 
-DARKNET_V3_WEIGHTS := ${PWD}/yolov3.weights
+DARKNET_V3_WEIGHTS := ${PWD}/darknet/yolov3.weights
 DARKNET_V3_CONFIG := ${DARKNET}/cfg/yolov3.cfg
 DARKNET_V3_DATA := ${DARKNET}/cfg/coco.data
 DARKNET_V3_WEIGHTS_URL := https://pjreddie.com/media/files/yolov3.weights

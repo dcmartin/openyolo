@@ -50,8 +50,6 @@ if config == "v3":
   weights = "yolov3.weights"
   data = "darknet/cfg/coco.data"
 
-print cfg, weights, data
-
 #dn.set_gpu(0)
 
 net = dn.load_net(cfg, weights, 0)

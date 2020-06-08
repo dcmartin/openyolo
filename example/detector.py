@@ -52,10 +52,6 @@ if config == "v3":
 
 try:
   gpu=os.environ['NVIDIA_VISIBLE_DEVICES'];
-  try:
-    dn.set_gpu(1)
-  except:
-    dn.set_gpu(0)
 except:
   dn.set_gpu(0)
 

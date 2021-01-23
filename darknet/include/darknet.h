@@ -5,7 +5,7 @@
 #include <string.h>
 #include <pthread.h>
 
-#ifdef GPU
+#if GPU > 0
     #define BLOCK 512
 
     #include "cuda_runtime.h"
